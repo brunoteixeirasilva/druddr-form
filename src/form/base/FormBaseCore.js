@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { TextField, Grid, Typography } from '@material-ui/core'
-import CompanyHint from '../hint/company'
-import { SwitchBox } from './control/switchBox'
-import SimpleSelect from './control/simpleSelect/SimpleSelect'
-import { generateRandom } from '../../../utils/string'
-import SuggestionSearchBox from '../suggestion/searchBox/SuggestionSearchBox'
-import SaveButton from '../button/save/SaveButton'
-import { translate } from '../../../utils/lang'
+// ! unused now
+// import CompanyHint from '../hint/company'
+import { SwitchBox } from '../control/switchBox'
+import SimpleSelect from '../control/simpleSelect/SimpleSelect'
+import { generateRandom } from '../../utils'
+import SuggestionSearchBox from '../control/suggestion/searchBox/SuggestionSearchBox'
+import SaveButton from '../../button/save/SaveButton'
 
 /**
  * Manages to supply a form pattern for implementation
@@ -19,7 +19,8 @@ import { translate } from '../../../utils/lang'
 class FormBaseCore extends React.Component {
 	model = null
 	initialModelState = null
-	companyRef = <CompanyHint key={generateRandom(5)} />
+	// ! unused now
+	// companyRef = <CompanyHint key={generateRandom(5)} />
 	mustValidate = []
 	invalids = []
 	_mounted = false
@@ -98,9 +99,10 @@ class FormBaseCore extends React.Component {
 		)
 	}
 
-	addCompanyRef() {
-		return this.addLine(this.companyRef, { xs: 12, sm: 12, md: 12, lg: 12 })
-	}
+	// ! unused now
+	// addCompanyRef() {
+	// 	return this.addLine(this.companyRef, { xs: 12, sm: 12, md: 12, lg: 12 })
+	// }
 
 	addForm(content) {
 		const self = this
@@ -316,7 +318,7 @@ class FormBaseCore extends React.Component {
 		return (
 			<SaveButton
 				type="submit"
-				ariaLabel={translate('label/save')}
+				ariaLabel="Save"
 				// action={}
 				disabled={() => !self.modelHasChanged()}
 			/>
